@@ -1,0 +1,57 @@
+/* Side Menu CSS */
+#side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: rgba(20, 20, 30, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: -4px 0 30px rgba(80, 0, 120, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  transform: translateX(100%);
+}
+
+#side-menu .close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #e81cff;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: color 0.3s;
+}
+
+#side-menu .close-btn:hover {
+  color: #ffffff;
+}
+
+#side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#side-menu ul li a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+#side-menu ul li a:hover {
+  color: #e81cff;
+  border-bottom: 2px solid #e81cff;
+}

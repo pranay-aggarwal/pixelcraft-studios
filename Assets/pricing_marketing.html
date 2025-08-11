@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marketing Services Pricing</title>
+  <link rel="icon" type="image/png" href="Assets/logo.png" />
+  <link rel="stylesheet" href="styles_pricing.css" />
+  <link rel="stylesheet" href="styles_sidemenu.css" />
+  <script>
+    fetch('head.html')
+      .then(response => response.text())
+      .then(data => {
+        document.head.insertAdjacentHTML('beforeend', data);
+      });
+  </script>
+</head>
+<body>
+
+  <video class="bg-video" src="Assets/bg pg1.mp4" autoplay loop muted></video>
+
+  
+
+  <div id="main">
+    <div data-scroll data-scroll-speed="-5" id="page1">   
+      <nav>
+        <img src="Assets/logo.png" alt="Logo" onclick="window.location.href='index.html'" style="cursor: pointer;"/>
+        <div id="right-nav">
+          <button onclick="window.location.href=''">Book a call</button>
+          <button id="menu-btn"><i class="ri-menu-line"></i></button>
+        </div>
+      </nav>
+
+      
+      <section class="hero">
+        
+        <h1>Marketing Services Pricing</h1>
+        <p>Transparent packages designed to elevate your brand, engage your audience, and drive measurable growth.</p>
+      </section>
+
+      
+
+      <section class="pricing-container">
+        <div class="pricing-card">
+          <h2>Starter Package</h2>
+          <p class="price">$499</p>
+          <ul>
+            <li>Social media profile setup</li>
+            <li>Content calendar (1 month)</li>
+            <li>Basic graphic design assets</li>
+            <li>Growth strategy overview</li>
+          </ul>
+          <button class="cta-button">Get Started</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <h2>Growth Package</h2>
+          <p class="price">$999</p>
+          <ul>
+            <li>Weekly content creation & posting</li>
+            <li>Advanced audience targeting</li>
+            <li>Performance analytics reports</li>
+            <li>Community management & engagement</li>
+          </ul>
+          <button class="cta-button">Select Plan</button>
+        </div>
+
+        <div class="pricing-card">
+          <h2>Premium Package</h2>
+          <p class="price">$1999</p>
+          <ul>
+            <li>Full marketing strategy & execution</li>
+            <li>Paid ad campaign management</li>
+            <li>Influencer & partnership outreach</li>
+            <li>Monthly performance reviews</li>
+          </ul>
+          <button class="cta-button">Choose Package</button>
+        </div>
+      
+      </section>
+    </div>
+  </div>
+
+
+  <div id="side-menu">
+    <button class="close-btn">&times;</button>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pricing_marketing.html">Marketing Services</a></li>
+        <li><a href="pricing_webdev.html">Web Development</a></li>
+        <li><a href="#">Strategy Consulting</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <script src="side_menu.js"></script>
+
+  <a href="index.html#page4" class="floating-back-btn">
+    <i class="ri-arrow-left-s-line"></i>
+  </a>
+</body>
+</html>
