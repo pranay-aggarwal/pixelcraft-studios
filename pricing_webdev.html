@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Development Pricing</title>
+  <link rel="icon" type="image/png" href="Assets/logo.png" />
+  <link rel="stylesheet" href="styles_pricing.css" />
+  <link rel="stylesheet" href="styles_sidemenu.css" />
+  <script>
+    fetch('head.html')
+      .then(response => response.text())
+      .then(data => {
+        document.head.insertAdjacentHTML('beforeend', data);
+      });
+  </script>
+</head>
+<body>
+  <video class="bg-video" src="Assets/bg pg1.mp4" autoplay loop muted></video>
+  
+  <div id="main">
+    <div data-scroll data-scroll-speed="-5" id="page1">
+      <nav>
+        <img src="Assets/logo.png" alt="Logo" onclick="window.location.href='index.html'" style="cursor: pointer;"/>
+        <div id="right-nav">
+          <button onclick="window.location.href='contact.html'">Book a call</button>
+          <button id="menu-btn"><i class="ri-menu-line"></i></button>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <h1>Website Development Pricing</h1>
+        <p>Flexible and transparent packages crafted to launch and grow your online presence.</p>
+      </section>
+
+      <section class="pricing-container">
+        <div class="pricing-card">
+          <h2>Landing Page</h2>
+          <p class="price">$499</p>
+          <ul>
+            <li>Single page, smooth scrolling</li>
+            <li>Responsive design</li>
+            <li>Basic SEO optimization</li>
+            <li>Fast delivery</li>
+          </ul>
+          <button class="cta-button">Get Started</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <h2>Business Website</h2>
+          <p class="price">$999</p>
+          <ul>
+            <li>Up to 5 pages</li>
+            <li>Custom design & animations</li>
+            <li>Contact & lead forms</li>
+            <li>SEO & speed optimized</li>
+          </ul>
+          <button class="cta-button">Select Plan</button>
+        </div>
+
+        <div class="pricing-card">
+          <h2>E-Commerce</h2>
+          <p class="price">$1999</p>
+          <ul>
+            <li>Product catalog & shop</li>
+            <li>Secure payment integration</li>
+            <li>Inventory & order management</li>
+            <li>Advanced analytics setup</li>
+          </ul>
+          <button class="cta-button">Choose Package</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <div id="side-menu">
+    <button class="close-btn">&times;</button>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pricing_marketing.html">Marketing Services</a></li>
+        <li><a href="pricing_webdev.html">Web Development</a></li>
+        <li><a href="#">Strategy Consulting</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <script src="side_menu.js"></script>
+</body>
+</html>

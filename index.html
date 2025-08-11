@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" type="image/png" href="Assets/logo.png" />
+    <script>
+        fetch('head.html')
+            .then(response => response.text())
+            .then(data => {
+                document.head.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles_sidemenu.css" />
+
+</head>
+
+<body>
+    
+    <div id="main" data-scroll-container>
+        <div data-scroll data-scroll-speed="-5" id="page1">            
+            <nav>
+                <img src="Assets/logo.png" alt="Logo" onclick="window.location.href='index.html'" style="cursor: pointer;"/>
+                <div id="right-nav">
+                    <button onclick="window.location.href=''"> Book a call</button>
+                    <button id="menu-btn"><i class="ri-menu-line"></i></button>
+
+                </div>
+            </nav>
+            <div class="center-page1">
+                <h1>PixelCraft Studios</h1>
+                <div class="center-page1-content">                    
+                    <p>Smart <span style="color: #e81cff">Marketing Solutions</span> for all your business needs</p>
+                    <button onclick="window.location.href='sample.html'">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow"></div>
+            </div>
+            
+            <video src="Assets/bg pg1.mp4" autoplay loop muted></video>
+        </div>
+
+        <div id="page2"> 
+            <h3>At PixelCraft Studios, we provide: </h3>
+            <h1>Custom <span id="text">Outreach solutions</span> that stand out, perform better, and grow with your business.
+                <br>
+                We deliver exceptional results through tailored strategies that elevate your brand.</h1>
+        </div>
+
+        <div id="page3"> 
+            <canvas></canvas>
+        </div>        
+        
+        <div id="page4">
+            <h1>Our Services</h1>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="image-container">
+                        <img src="Assets/pg4/social media.png" alt="Service Image">
+                    </div>
+                    <p class="heading">
+                        Social Media Management
+                    </p>
+                    <p>
+                        We create and manage your social media presence, from content creation to community engagement. Our team ensures your brand stands out in the digital landscape. We create engaging content, manage your online presence, and build a brand around your product.
+                    </p>
+                    <a href="pricing_marketing.html" class="card-link">See Pricing</a>
+                </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="Assets/pg4/web dev.png" alt="Service Image">
+                    </div>
+                    <p class="heading">
+                        Website Development
+                    </p>
+                    <p>
+                        Whether its a Landing Pages, E-commerce sites, or a full-stack custom web applications, we build it all. From Designing to Web Hosting amd Deployment, we provide end-to-end solutions. 
+                    </p>
+                    <a href="pricing_webdev.html" class="card-link">See Pricing</a>
+                </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="Assets/pg4/strategy.png" alt="Service Image">
+                    </div>
+                    <p class="heading">
+                        Strategic Consulting
+                    </p>
+                    <p>
+                        Our experts analyze your business needs and provide strategic insights to help you achieve your goals. We work closely with you to develop a roadmap for success, ensuring your marketing efforts align with your business objectives.
+                    </p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="page5" data-scroll>
+            <h1>Hear What Our Clients Are Raving About</h1>
+            <p class="subtitle">Transform Your Business with Smarter Solutions That Deliver Real-World Results</p>
+            <div class="review-carousel">
+                <button class="carousel-btn left" id="review-prev">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e81cff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="reviews-wrapper">
+                    <!-- Reviews will be injected here by JS -->
+                </div>
+                <button class="carousel-btn right" id="review-next">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e81cff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="side-menu">
+        <button class="close-btn">&times;</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pricing_marketing.html">Marketing Services</a></li>
+            <li><a href="pricing_webdev.html">Web Development</a></li>
+            <li><a href="#">Strategy Consulting</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <script src="reviews.js"></script>
+    <script src="side_menu.js"></script>
+</body>
+</html>
