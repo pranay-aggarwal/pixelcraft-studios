@@ -11,25 +11,25 @@ const reviews = [
         text: "The team at PixelCraft Studios delivered fast, accurate, and flexible solutions for our campaigns. Highly recommended!",
         author: "Priya Sharma",
         role: "Founder, Artify",
-        avatar: "Assets/avatar2.jpg"
+        avatar: "Assets/reviews/client2.png"
     },
     {
         text: "Why limit yourself? Their multi-model approach delivers top-tier expertise for building, scaling, and exploring new markets.",
         author: "Rohan Gupta",
         role: "Growth Strategist",
-        avatar: "Assets/avatar3.jpg"
+        avatar: "Assets/reviews/client3.png"
     },
     {
         text: "PixelCraft Studios understands what modern businesses need and delivers it with style. I absolutely loved working with them.",
         author: "Simran Kaur",
         role: "CEO, Kaur Creations",
-        avatar: "Assets/avatar4.jpg"
+        avatar: "Assets/reviews/client4.png"
     },
     {
         text: "Their webdev solutions made automation easy for our team. The results were beyond our expectations.",
         author: "Vikram Singh",
         role: "Operations Manager",
-        avatar: "Assets/avatar5.jpg"
+        avatar: "Assets/reviews/client5.png"
     }
 ];
 // --- Carousel Logic ---
