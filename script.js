@@ -5,7 +5,12 @@ function loco() {
 
   const locoScroll = new LocomotiveScroll({
     el: scrollContainer,
-    smooth: true
+    smooth: true,
+    multiplier: 1,   
+    lerp: 0.06,        
+    smoothMobile: true, 
+    smartphone: { smooth: true },
+    tablet: { smooth: true }
   });
 
   locoScroll.on("scroll", ScrollTrigger.update);
@@ -44,6 +49,34 @@ function animateText() {
     color: "#fff"
   });
 }
+
+// --- Preloader Logic ---
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  const mainContent = document.getElementById("main");
+
+  const MIN_TIME = 2000; // minimum loader display time in ms
+  const startTime = performance.now();
+
+  const finish = () => {
+    preloader.classList.add("fade-out");
+    setTimeout(() => {
+      preloader.style.display = "none";
+      mainContent.style.display = "block";
+      // Initialize animations AFTER loader is gone
+      loco();
+      animateText();
+    }, 500); // wait for fade-out transition
+  };
+
+  const elapsed = performance.now() - startTime;
+  if (elapsed < MIN_TIME) {
+    setTimeout(finish, MIN_TIME - elapsed);
+  } else {
+    finish();
+  }
+});
+
 // --- Page 2 ---
 function canvas(){
     const canvas = document.querySelector("#page3>canvas");
