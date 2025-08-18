@@ -402,9 +402,69 @@ function canvas(){
     });
 }
 
+function animateScrollySection() {
+    ScrollTrigger.matchMedia({
+        "(min-width: 769px)": function() {
+            const imageWrappers = document.querySelectorAll(".scrolly-section__image-wrapper");
+            const textBlocks = document.querySelectorAll(".scrolly-section__text-block");
+
+            // Pin the image column
+            ScrollTrigger.create({
+                trigger: ".scrolly-section",
+                start: "top top",
+                end: "bottom bottom",
+                pin: ".scrolly-section__image-column",
+                scroller: "#main"
+            });
+
+            /**
+             * This helper function is the key. It's the single source of truth
+             * for which image is currently active.
+             * @param {number} activeIndex - The index of the image to show.
+             */
+            function setActiveImage(activeIndex) {
+                imageWrappers.forEach((wrapper, index) => {
+                    // Animate the opacity and scale of each image.
+                    // If it's the active one, fade it in. Otherwise, fade it out.
+                    gsap.to(wrapper, {
+                        autoAlpha: index === activeIndex ? 1 : 0,
+                        scale: index === activeIndex ? 1 : 0.95,
+                        duration: 0.5,
+                        ease: "power2.inOut"
+                    });
+                });
+            }
+
+            // Set the very first image as active immediately on load.
+            setActiveImage(0);
+
+            // Create a trigger for each text block.
+            textBlocks.forEach((block, index) => {
+                ScrollTrigger.create({
+                    trigger: block,
+                    scroller: "#main",
+                    start: "top center", // Trigger when the top of the block hits the center
+                    end: "bottom center", // End when the bottom of the block leaves the center
+                    // When the trigger is active, call our helper function.
+                    onToggle: self => {
+                        if (self.isActive) {
+                            setActiveImage(index);
+                        }
+                    }
+                });
+            });
+        },
+        
+        "(max-width: 768px)": function() {
+            // On mobile, just make all images visible.
+            gsap.set(".scrolly-section__image-wrapper", { autoAlpha: 1 });
+        }
+    });
+}
 
 window.addEventListener("load", () => {
   loco();
   animateText();
   canvas();
+  animateScrollySection();
 });

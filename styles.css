@@ -599,7 +599,9 @@ html, body {
     letter-spacing: -0.1em;
 }
 
-
-
-
-
+/* Page 6 CSS */
+#page6 {
+    position: relative;
+    z-index: 10;
+    padding-top: 10vh;
+}
