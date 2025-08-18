@@ -1,5 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
 function loco() {
   gsap.registerPlugin(ScrollTrigger);
 
