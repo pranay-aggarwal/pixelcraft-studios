@@ -1,3 +1,5 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 function loco() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -55,7 +57,7 @@ window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   const mainContent = document.getElementById("main");
 
-  const MIN_TIME = 2000; // minimum loader display time in ms
+  const MIN_TIME = 2000; 
   const startTime = performance.now();
 
   const finish = () => {
@@ -63,10 +65,9 @@ window.addEventListener("load", () => {
     setTimeout(() => {
       preloader.style.display = "none";
       mainContent.style.display = "block";
-      // Initialize animations AFTER loader is gone
       loco();
       animateText();
-    }, 500); // wait for fade-out transition
+    }, 500); 
   };
 
   const elapsed = performance.now() - startTime;
@@ -402,13 +403,13 @@ function canvas(){
     });
 }
 
+// --- Page 6 ---
 function animateScrollySection() {
     ScrollTrigger.matchMedia({
         "(min-width: 769px)": function() {
             const imageWrappers = document.querySelectorAll(".scrolly-section__image-wrapper");
             const textBlocks = document.querySelectorAll(".scrolly-section__text-block");
 
-            // Pin the image column
             ScrollTrigger.create({
                 trigger: ".scrolly-section",
                 start: "top top",
@@ -416,16 +417,10 @@ function animateScrollySection() {
                 pin: ".scrolly-section__image-column",
                 scroller: "#main"
             });
-
-            /**
-             * This helper function is the key. It's the single source of truth
-             * for which image is currently active.
-             * @param {number} activeIndex - The index of the image to show.
-             */
+  
             function setActiveImage(activeIndex) {
                 imageWrappers.forEach((wrapper, index) => {
-                    // Animate the opacity and scale of each image.
-                    // If it's the active one, fade it in. Otherwise, fade it out.
+
                     gsap.to(wrapper, {
                         autoAlpha: index === activeIndex ? 1 : 0,
                         scale: index === activeIndex ? 1 : 0.95,
@@ -435,17 +430,14 @@ function animateScrollySection() {
                 });
             }
 
-            // Set the very first image as active immediately on load.
             setActiveImage(0);
 
-            // Create a trigger for each text block.
             textBlocks.forEach((block, index) => {
                 ScrollTrigger.create({
                     trigger: block,
                     scroller: "#main",
-                    start: "top center", // Trigger when the top of the block hits the center
-                    end: "bottom center", // End when the bottom of the block leaves the center
-                    // When the trigger is active, call our helper function.
+                    start: "top center", 
+                    end: "bottom center", 
                     onToggle: self => {
                         if (self.isActive) {
                             setActiveImage(index);
@@ -456,7 +448,6 @@ function animateScrollySection() {
         },
         
         "(max-width: 768px)": function() {
-            // On mobile, just make all images visible.
             gsap.set(".scrolly-section__image-wrapper", { autoAlpha: 1 });
         }
     });
